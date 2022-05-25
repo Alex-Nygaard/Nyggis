@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9mf_9b(e6k+6z71m7lqx8soy#1rq@^9h0up5#2p4@%(zq2^@6t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['nyggis.herokuapp.com', 'nyggis.com', '127.0.0.1']
 
 
 # Application definition
@@ -49,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'helloworld.urls'
 
